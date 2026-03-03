@@ -99,3 +99,12 @@
   --section-colors-ocean-primary: var(--blue-600);
   --section-colors-sand-primary: var(--sand-600);
 }
+
+
+.horizon-illustration img,
+.horizon-illustration svg {
+  position: absolute;
+  right: 0;        /* Pushes it to the right edge */
+  top: 4%;     /* Lifts it up from bottom (adjust percentage) */
+  width: 80%;      /* Adjust size as needed */
+}
