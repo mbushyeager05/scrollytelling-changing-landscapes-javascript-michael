@@ -1,0 +1,101 @@
+@import url('tanker.css');
+
+/* Collection name: primitives_colors */
+/* Mode: Mode 1 */
+:root {
+  --primary-900: #2b2b2b;
+  --primary-800: #3a3a3a;
+  --primary-700: #4a4a4a;
+  --netural-white: #ffffff;
+  --netural-black: #000000;
+  --gray-900: #1f2937;
+  --gray-700: #4b5563;
+  --gray-500: #6b7280;
+  --gray-300: #d1d5db;
+  --gray-100: #f3f4f6;
+  --sand-700: #c89664;
+  --sand-600: #d4a574;
+  --sand-500: #e8b77d;
+  --sand-300: #f4e4c1;
+  --green-900: #1a2921;
+  --green-700: #2d4a3e;
+  --green-500: #4f7057;
+  --green-300: #6b8e6f;
+  --blue-700: #4a7c8e;
+  --blue-600: #6b9baa;
+  --blue-400: #9bc4cb;
+  --blue-300: #87ceeb;
+  --accent-600: #d97854;
+  --accent-500: #f4a261;
+  --accent-400: #ffd93d;
+  --gray-800: #374151;
+  --gray-950: #0f1419;
+}
+
+/* Collection name: typography */
+/* Mode: Mode 1 */
+:root {
+  --heading-h1: 4rem;
+  --heading-h2: 3.5rem;
+  --heading-h3: 1.5rem;
+  --heading-h4: 1.25rem;
+  --heading-h5: 2rem;
+  --heading-h6: 1.25rem;
+  --body-xxl: 1.5rem;
+  --body-xl: 1.125rem;
+  --body-l: 1rem;
+  --body-m: 0.875rem;
+  --body-s: 0.75rem;
+  --body-xs: 0.5rem;
+  --font-heading: 'Tanker-Regular', 'Impact', 'Arial Black', sans-serif;
+  --font-subheadings: 'Tanker-Regular', 'Impact', 'Arial Black', sans-serif;
+  --font-body: 'Satoshi-Medium', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-captions: 'Satoshi-Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-footer: 'Satoshi-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Collection name: spacing */
+/* Mode: Mode 1 */
+:root {
+  --xs: 0.25rem;
+  --s: 0.5rem;
+  --m: 1rem;
+  --l: 1.25rem;
+  --xl: 1.5rem;
+  --xxl: 1.75rem;
+  --3xl: 2rem;
+  --4xl: 2.25rem;
+}
+
+
+/* Collection name: semantic_colors */
+/* Mode: Mode: Dark */
+:root {
+  --surface-colors-surface-primary: var(--gray-900);
+  --text-colors-text-primary: var(--gray-100);
+  --accent-colors-accent-primary: var(--accent-500);
+  --surface-colors-surface-secondary: var(--gray-800);
+  --surface-colors-surface-code: var(--gray-950);
+  --text-colors-text-secondary: var(--gray-300);
+  --text-colors-text-on-dark: var(--gray-100);
+  --accent-colors-accent-highlight: var(--accent-400);
+  --section-colors-forest-primary: var(--green-700);
+  --section-colors-ocean-primary: var(--blue-600);
+  --section-colors-sand-primary: var(--sand-600);
+}
+
+/* Collection name: semantic_colors */
+/* Mode: Mode: Light */
+:root {
+  --surface-colors-surface-primary: var(--netural-white);
+  --text-colors-text-primary: var(--gray-900);
+  --accent-colors-accent-primary: var(--accent-500);
+  --surface-colors-surface-secondary: var(--gray-100);
+  --surface-colors-surface-code: var(--gray-900);
+  --text-colors-text-secondary: var(--gray-700);
+  --text-colors-text-on-dark: var(--gray-100);
+  --accent-colors-accent-highlight: var(--accent-400);
+  --section-colors-forest-primary: var(--green-700);
+  --section-colors-ocean-primary: var(--blue-600);
+  --section-colors-sand-primary: var(--sand-600);
+}

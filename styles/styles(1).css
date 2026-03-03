@@ -1,0 +1,315 @@
+@import url('variables.css');
+@import url('tanker.css');
+@import url('satoshi.css');
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+
+/* Horizon Section */
+h1 {
+    font-family: var(--font-heading);
+    font-size: var(--heading-h1);
+    color: var(--gray-100);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--xs);
+    margin-left: .5rem;
+}
+
+h4 {
+    font-family: var(--font-subheadings);
+    font-size: var(--heading-h4);
+    color: var(--gray-700);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--xs);
+    margin-left: .5rem;
+}
+
+.theme_horizon__text{
+    height: auto;
+    width: 860px;
+    font-family: var(--font-body);
+    font-size: var(--body-m);
+    color: var(--gray-700);
+    line-height: 1.5;
+    margin-bottom: var(--s);
+    line-height: 2rem;
+    padding: 2rem;
+     border-radius: 20px 20px 20px 20px;
+    background: var(--Surface-Colors-surface-primary, #FFF);
+    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8rem;
+}
+
+/* Background Colors */
+.theme_horizon {
+  background: linear-gradient(180deg, 
+    #76A5AE 0%,
+    #8AAFB5 15%,
+    #A4BDB5 30%,
+    #C8C9AA 45%,
+    #DFC69A 60%,
+    #E8C18F 75%,
+    #EDBD84 90%,
+    #F0BA7E 100%
+  );
+  height: 250vh;
+  position: relative;
+}
+
+/* City - Dark slate teal gradient */
+.theme_city {
+  background: linear-gradient(180deg, 
+    #3D5A6B 0%,
+    #416773 20%,
+    #4A7581 40%,
+    #52838F 60%,
+    #5B919D 80%,
+    #659FAB 100%
+  );
+  height: 300vh;
+  position: relative;
+}
+
+/* Forest - Emerald to mint gradient */
+.theme_forest {
+  background: linear-gradient(180deg, 
+    #1A7A6F 0%,
+    #268B7E 20%,
+    #329B8C 40%,
+    #4BAA97 60%,
+    #6BB9A4 80%,
+    #A3D9C4 100%
+  );
+  height: 300vh;
+  position: relative;
+}
+
+/* Mountains - Teal to green to yellow */
+.theme_mountains {
+  background: linear-gradient(180deg, 
+    #1F5A6B 0%,
+    #2A6D7A 15%,
+    #3D8089 30%,
+    #5B9477 45%,
+    #7AA765 60%,
+    #9BB954 75%,
+    #C5CC49 90%,
+    #EAD84F 100%
+  );
+  height: 300vh;
+  position: relative;
+}
+
+/* Coast - Bright turquoise to light blue */
+.theme_coast {
+  background: linear-gradient(180deg, 
+    #29B8CA 0%,
+    #3DC2D4 20%,
+    #52CCDE 40%,
+    #6FD5E5 60%,
+    #92DEEC 80%,
+    #C1EBF5 100%
+  );
+  height: 300vh;
+  position: relative;
+}
+
+/* Desert - Brown to orange to peachy yellow */
+.theme_desert {
+  background: linear-gradient(180deg, 
+    #5B3A29 0%,
+    #7A4A2E 15%,
+    #995A33 30%,
+    #B76F3E 45%,
+    #D18748 60%,
+    #E5A05C 75%,
+    #F3B878 90%,
+    #FAD08E 100%
+  );
+  height: 300vh;
+  position: relative;
+}
+
+/* Cave - Black to dark teal */
+.theme_cave {
+  background: linear-gradient(180deg, 
+    #000000 0%,
+    #0A0F12 20%,
+    #141D23 40%,
+    #1E2B33 60%,
+    #283943 80%,
+    #334852 100%
+  );
+  height: 300vh;
+  position: relative;
+}
+
+/* Night Sky - Black to dark blue to purple */
+.theme_nightsky {
+  background: linear-gradient(180deg, 
+    #000000 0%,
+    #0D1219 15%,
+    #1A2332 30%,
+    #27344B 45%,
+    #344564 60%,
+    #42567D 75%,
+    #516796 90%,
+    #6078AF 100%
+  );
+  height: 200vh;
+  position: relative;
+}
+
+.theme_journey {
+   background: linear-gradient(180deg, 
+    #76A5AE 0%,
+    #8AAFB5 15%,
+    #A4BDB5 30%,
+    #C8C9AA 45%,
+    #DFC69A 60%,
+    #E8C18F 75%,
+    #EDBD84 90%,
+    #F0BA7E 100%
+  );
+  height: 250vh;
+  position: relative;
+}
+
+
+
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--heading-h2);
+    color: var(--primary-900);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--xs);
+    margin-left: .5rem;
+}
+
+h3 {
+    font-family: var(--font-subheadings);
+    font-size: var(--heading-h3);
+    color: var(--gray-700);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--xs);
+    margin-left: .5rem;
+}
+
+p {
+    font-family: var(--font-body);
+    font-size: var(--body-m);
+    color: var(--gray-700);
+    line-height: 1.5;
+    margin-bottom: var(--s);
+    line-height: 2rem;;
+}
+
+
+
+.heading {
+    width: fit-content;
+    height: auto;
+    padding: 2rem 4rem 2rem 7rem;
+    border-radius: 0 20px 20px 0;
+    background: var(--Surface-Colors-surface-primary, #FFF);
+    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin-top: 4rem;
+}
+
+.text-box-container-left {
+    width: 860px;
+    height: auto;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-radius: 0 20px 20px 0;
+    background: var(--Surface-Colors-surface-primary, #FFF);
+    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.first_contact_heading {
+    width: fit-content;
+    height: auto;
+    padding: 2rem;
+    border-radius: 0 20px 20px 0;
+    background: var(--Surface-Colors-surface-primary, #FFF);
+    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+
+.text-box-container-right {
+    width: 860px;
+    height: auto;
+    padding: 2rem;
+    margin-top: 4rem;
+    margin-left: auto;
+    border-radius: 20px 0 0 20px;
+    background: var(--Surface-Colors-surface-primary, #FFF);
+    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.teaching-code {
+    width: fit-content;
+    height: auto;
+    padding: 2rem;
+    margin-top: 4rem;
+    margin-left: auto;
+    border-radius: 20px 0 0 20px;
+    background: var(--Surface-Colors-surface-primary, #FFF);
+    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.what-shifted {
+    width: 860px;
+    height: auto;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-radius: 0 20px 20px 0;
+    background: var(--Surface-Colors-surface-primary, #FFF);
+    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
