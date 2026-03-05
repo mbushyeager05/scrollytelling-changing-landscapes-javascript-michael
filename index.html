@@ -27,7 +27,6 @@
   <circle id="sun-circle" cx="200" cy="80" r="80" fill="#E8735A" />
 </svg>
 
-<img src="assets/images/character-sitting.png" alt="character sitting" class="character-sitting">
 
       <div class="horizon-illustration">
         <img src="assets/images/horizon-theme-2.0.png" alt="Horizon Illustration">
@@ -299,10 +298,39 @@ window.addEventListener("scroll", fadeInSection);
 
       </div>
 
+<!-- SVG #5- Ocean-Waves -->
+<!--   I found a cool webiste that makes waves and I wanted to experiemnet with it on the waves. Hope that is okay.   -->
+    
+    <svg id="waves-svg" width="300" height="100" viewBox="0 0 300 100" fill="none">
+      
+     <!-- Wave 1 -->
+      <path class="wave" id="wave1"
+        d="M0 60 Q37.5 40 75 60 Q112.5 80 150 60 Q187.5 40 225 60 Q262.5 80 300 60 L300 100 L0 100Z"
+        fill="#1a4a6a" opacity="0.5"/>
+      <!-- Wave 2 -->
+      <path class="wave" id="wave2"
+        d="M0 68 Q37.5 50 75 68 Q112.5 86 150 68 Q187.5 50 225 68 Q262.5 86 300 68 L300 100 L0 100Z"
+        fill="#1e5a7e" opacity="0.7"/>
+      <!-- Wave 3 -->
+      <path class="wave" id="wave3"
+        d="M0 76 Q37.5 60 75 76 Q112.5 92 150 76 Q187.5 60 225 76 Q262.5 92 300 76 L300 100 L0 100Z"
+        fill="#2a7aaa"/>
+
+    </svg>
+
+
       <!-- Coast illustration -->
       <div class="coast-illustration">
          <img src="assets/images/ocean-theme.png" alt="Ocean Illustration">
+         <svg class="sun-theme-ocean" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <circle id="sun-circle" cx="200" cy="80" r="50" fill="#FCBF49" />
+</svg>
       </div>
+
+
+
+
+      
     </section>
 
     <!-- SECTION 6: THE DESERT - Landscape -->
@@ -319,11 +347,41 @@ window.addEventListener("scroll", fadeInSection);
 
       <!-- TEACHING: THE SYSTEM -->
       <div class="section_teaching" id="the_system">
-
+        
+        
         <div class="heading">
           <h2>The System</h2>
           <h3>Design Tokens & CSS Custom Properties</h3>
         </div>
+<!--  SVG #4- Compass  -->
+  
+  <svg id="compass-svg" width="140" height="140" viewBox="0 0 140 140" fill="none">
+    
+       <!-- Outer ring -->
+      <circle cx="70" cy="70" r="62" stroke="#8b7355" stroke-width="3" fill="#1e1a2e"/>
+      <!-- Inner ring -->
+      <circle cx="70" cy="70" r="50" stroke="#6b5a3e" stroke-width="1" fill="none" opacity="0.5"/>
+    
+    <!-- Cardinal ticks -->
+      <line x1="70" y1="12"  x2="70" y2="22"  stroke="#8b7355" stroke-width="2"/>
+      <line x1="70" y1="118" x2="70" y2="128" stroke="#8b7355" stroke-width="2"/>
+      <line x1="12" y1="70"  x2="22" y2="70"  stroke="#8b7355" stroke-width="2"/>
+      <line x1="118" y1="70" x2="128" y2="70" stroke="#8b7355" stroke-width="2"/>
+    
+      <!-- Needle -->
+      <g id="compass-needle">
+        <polygon points="70,25 76,70 70,65 64,70" fill="#c8964a"/>
+        <polygon points="70,115 76,70 70,75 64,70" fill="#4a5a70"/>
+      </g>
+    
+    <!-- Center -->
+      <circle cx="70" cy="70" r="5" fill="#c8964a"/>
+      <circle cx="70" cy="70" r="2" fill="#1e1a2e"/>
+    
+  </svg>
+    
+
+
 
         <div class="text-box-container-right">
           <h4>Universal Rules</h4>
@@ -519,14 +577,21 @@ journey.addEventListener("scroll", function() {
         <p>The journey taught that understanding comes from walking through it step by step, not from staring at the overwhelming whole from the city. Some things still feel confusing. Scope, closures, async patterns. That's terrain that hasn't been crossed yet. But knowing it's out there and knowing getting there will happen because already proving learning new landscapes is possible. What got learned is saved. It persists. It belongs now. The tools exist. The rest is practice and exploration.</p>
       </div>
 
+
+
+
+
+
+
+      
     </section>
+
+
+
+
 
   </main>
 
-  <!-- GSAP and ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
-
+  
 </body>
 </html>

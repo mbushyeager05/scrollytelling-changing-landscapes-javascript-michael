@@ -28,7 +28,7 @@ h1 {
     color: var(--gray-100);
     letter-spacing: 0.1em;
     margin-bottom: var(--xs);
-    margin-left: 10rem;
+    margin-left: 5rem;
     margin-top: 28rem;
 }
 
@@ -42,7 +42,7 @@ h4 {
 }
 
 .theme_horizon__subtitle {
-  margin-left: 10rem;
+  margin-left: 5rem;
 }
 
 .theme_horizon__content,
@@ -96,9 +96,9 @@ h4 {
 
 
 .character-sitting {
-  position: absolute;
-  top: 1220px; /* Adjust as needed */
-  left: 48%;
+  position: relative;
+  top: 600px; /* Adjust as needed */
+  left: 52%;
   width: 15%;
   z-index: 50;
 }
@@ -115,7 +115,7 @@ h4 {
     #EDBD84 90%,
     #F0BA7E 100%
   );
-  height: 300vh;
+  height: 400vh;
   position: relative;
   z-index: auto;
   overflow: hidden;
@@ -347,7 +347,8 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    position: relative;
+    z-index: 1;
     margin-top: 4rem;
 }
 
@@ -392,6 +393,8 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    position: relative;
+    z-index: 1;
 }
 
 .teaching-code {
@@ -421,3 +424,28 @@ p {
     align-items: center;
 }
 
+
+
+.sun-theme-ocean {
+  position: absolute;
+  top: 30rem;
+  left: 50%;
+  width: 1520px;
+  height: 1520px;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+
+#waves-svg {
+  position: absolute;
+  top: 30rem;
+  left: 50%;
+  width: 1520px;
+  height: 1520px;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+}
