@@ -131,7 +131,6 @@ top: 30%;   /* nudge up/down to land on cliff top */
   height: 500vh;
   position: relative;
   z-index: 1;
- overflow: visible;
 }
 
 /* City - Dark slate teal gradient */
@@ -150,7 +149,6 @@ top: 30%;   /* nudge up/down to land on cliff top */
   margin-top: -30vh;
   padding-top: 30vh;
   overflow: hidden;
-  isolation: isolate;
 }
 
 /* Forest - Emerald to mint gradient */
