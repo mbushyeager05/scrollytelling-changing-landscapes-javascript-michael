@@ -178,7 +178,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
     #C5CC49 90%,
     #EAD84F 100%
   );
-  height: 300vh;
+  height: 350vh;
   position: relative;
 }
 
@@ -497,6 +497,11 @@ top: 70%;   /* nudge up/down to land on cliff top */
 top: 70%;  /* nudge up/down to land on cliff top */
   left: 45%;    /* nudge left/right to align with cliff */
   width: 100%;
+  z-index: -1;
+}
+
+
+.birds-container {
   z-index: -1;
 }
 
