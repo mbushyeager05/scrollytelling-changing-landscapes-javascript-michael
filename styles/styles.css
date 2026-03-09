@@ -297,7 +297,7 @@ top: 30%;   /* nudge up/down to land on cliff top */
   object-position: center bottom;
 }
 
-.theme_city > *:not(.city-illustration),
+.theme_city > *:not(.city-illustration):not(.traffic-light),
 .theme_forest > *:not(.forest-illustration),
 .theme_mountains > *:not(.mountains-illustration),
 .theme_coast > *:not(.coast-illustration),
@@ -308,7 +308,7 @@ top: 30%;   /* nudge up/down to land on cliff top */
   z-index: 1;
 }
 
-.theme_city > *:not(.city-illustration) {
+.theme_city > *:not(.city-illustration):not(.traffic-light) {
   z-index: 50;
 }
 
