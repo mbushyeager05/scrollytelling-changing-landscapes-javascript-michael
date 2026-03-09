@@ -301,7 +301,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
 .theme_forest > *:not(.forest-illustration),
 .theme_mountains > *:not(.mountains-illustration),
 .theme_coast > *:not(.coast-illustration),
-.theme_desert > *:not(.desert-illustration),
+.theme_desert > *:not(.desert-illustration):not(.desert-cactus),
 .theme_cave > *:not(.cave-illustration),
 .theme_nightsky > *:not(.nightsky-illustration) {
   position: relative;
@@ -310,6 +310,30 @@ top: 26%;   /* nudge up/down to land on cliff top */
 
 .theme_city > *:not(.city-illustration):not(.traffic-light) {
   z-index: 50;
+}
+
+/* ─── DESERT CACTI ─── */
+
+.desert-cactus {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  height: 15%;
+  width: auto;
+}
+
+.desert-cactus--1 {
+  left: 3%;
+}
+
+.desert-cactus--2 {
+  left: 45%;
+  transform: translateX(-50%);
+}
+
+.desert-cactus--3 {
+  right: 3%;
 }
 
 .traffic-light {
