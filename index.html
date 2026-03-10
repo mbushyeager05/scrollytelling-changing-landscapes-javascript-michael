@@ -19,8 +19,6 @@
         <h2 class="theme_horizon__subtitle">Learning JavaScript One Terrain at a Time</h2>
       </div>
 
-<img src="assets/images/character-sitting.png" alt="character sitting" class="character-sitting">
-
       <p class="theme_horizon__text">Standing at the edge looking outward. The sun hasn't risen yet. In the distance, barely visible through morning haze, stretches an impossible vista. Dark forests, gray mountains, a sliver of coastline, endless golden sand, and above it all, a night sky not yet visible. The path winds through every terrain. From here, it looks impossibly long. But here's the thing: at the threshold between not knowing and beginning to learn, the answer becomes clear. One landscape at a time. One concept at a time. Behind, the city hums. Time to turn around and see where this adventure actually begins.</p>
 
 
@@ -31,13 +29,15 @@
 
       <div class="horizon-illustration">
         <img src="assets/images/horizon-theme-2.0.png" alt="Horizon Illustration">
+        <img src="assets/images/character-sitting.png" alt="character sitting" class="character-sitting">
       </div>
 
-      <img src="assets/images/cloud-1.png" alt="Cloud">
-      <img src="assets/images/cloud-2.png" alt="Cloud">
+      <img src="assets/images/cloud-1.png" alt="Cloud" class="cloud cloud-a">
+      <img src="assets/images/cloud-2.png" alt="Cloud" class="cloud cloud-b">
+      <img src="assets/images/cloud-1.png" alt="Cloud" class="cloud cloud-c">
+      <img src="assets/images/cloud-2.png" alt="Cloud" class="cloud cloud-d">
 
-      <img src="assets/images/cloud-1.png" alt="Cloud">
-      <img src="assets/images/cloud-2.png" alt="Cloud">
+      <div class="horizon-night-overlay"></div>
     </section>  
 
     <!-- SECTION 2: THE CITY - Landscape -->
@@ -109,8 +109,6 @@ console.log(firstName, lastName);
         </div>
 
       </div>
-
-      
 
       <!-- City illustration -->
       <div class="city-illustration">
@@ -670,6 +668,7 @@ journey.addEventListener("scroll", function() {
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-<script src="scripts/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>

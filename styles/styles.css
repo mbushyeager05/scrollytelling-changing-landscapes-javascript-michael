@@ -12,6 +12,11 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 section {
@@ -31,7 +36,7 @@ h1 {
     margin-bottom: var(--xs);
     margin-left: 5rem;
     margin-top: 18rem;
-    width: 105rem;
+    max-width: calc(100% - 5rem);
 }
 
 h4 {
@@ -71,24 +76,25 @@ h4 {
   width: 55%;
    bottom: 0;
   left: 50%;
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
   margin-top: -5%;
 }
 
-.horizon-illustration img {
+.horizon-illustration img:first-child {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ─── FIX: Character sits on the cliff ─── */
+/* ─── Character anchored to the cliff in the illustration ─── */
 .character-sitting {
   position: absolute;
-top: 26%;   /* nudge up/down to land on cliff top */
-  right: 37%;    /* nudge left/right to align with cliff */
-  width: 10%;
-  z-index: 2;
+  bottom: 44%;
+  right: 16%;
+  width: 3vw;
+  height: auto;
+  z-index: 4;
   pointer-events: none;
 }
 
@@ -131,6 +137,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
   height: 500vh;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 /* City - Dark slate teal gradient */
@@ -143,7 +150,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
     #5B919D 80%,
     #659FAB 100%
   );
-  height: 550vh;
+  height: 580vh;
   position: relative;
   z-index: 6;
   margin-top: -30vh;
@@ -180,6 +187,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
   );
   height: 350vh;
   position: relative;
+  overflow: hidden;
 }
 
 /* Coast - Bright turquoise to light blue */
@@ -194,6 +202,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
   );
   height: 300vh;
   position: relative;
+  overflow: hidden;
 }
 
 /* Desert - Brown to orange to peachy yellow */
@@ -210,6 +219,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
   );
   height: 300vh;
   position: relative;
+  overflow: hidden;
 }
 
 /* Cave - Black to dark teal */
@@ -224,6 +234,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
   );
   height: 300vh;
   position: relative;
+  overflow: hidden;
 }
 
 /* Night Sky - Black to dark blue to purple */
@@ -240,6 +251,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
   );
   height: 200vh;
   position: relative;
+  overflow: hidden;
 }
 
 .theme_journey {
@@ -255,6 +267,7 @@ top: 26%;   /* nudge up/down to land on cliff top */
   );
   height: 250vh;
   position: relative;
+  overflow: hidden;
 }
 
 
@@ -346,6 +359,22 @@ top: 26%;   /* nudge up/down to land on cliff top */
   pointer-events: none;
 }
 
+
+/* ─── CLOUDS ─── */
+.cloud { position: absolute; pointer-events: none; z-index: 2; }
+.cloud-a { bottom: 35%; left: -25%; width: 28%; opacity: 0.9; }
+.cloud-b { bottom: 28%; left: -45%; width: 24%; opacity: 0.85; }
+.cloud-c { bottom: 40%; left: -65%; width: 32%; opacity: 0.8; }
+.cloud-d { bottom: 22%; left: -80%; width: 20%; opacity: 0.75; }
+
+.horizon-night-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #3D5A6B 0%, #1a2535 50%, #0d1219 100%);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
 
 /* ─── TYPOGRAPHY ─── */
 
@@ -492,8 +521,8 @@ p {
 
 .character-city {
   position: absolute;
-top: 195%;   /* nudge up/down to land on cliff top */
-  right: 17%;    /* nudge left/right to align with cliff */
+  top: 195%;
+  right: 17%;
   width: 50%;
   z-index: 2;
   pointer-events: none;
@@ -502,24 +531,24 @@ top: 195%;   /* nudge up/down to land on cliff top */
 
 .humans-1{
   position: absolute;
-top: 70%;   /* nudge up/down to land on cliff top */
-  left: 45%;    /* nudge left/right to align with cliff */
+  top: 70%;
+  left: 45%;
   width: 100%;
   z-index: -1;
 }
 
 .humans-2{
   position: absolute;
-top: 70%;   /* nudge up/down to land on cliff top */
-  right: 65%;    /* nudge left/right to align with cliff */
+  top: 70%;
+  right: 65%;
   width: 100%;
   z-index: -1;
 }
 
 .humans-3{
   position: absolute;
-top: 70%;  /* nudge up/down to land on cliff top */
-  left: 45%;    /* nudge left/right to align with cliff */
+  top: 70%;
+  left: 45%;
   width: 100%;
   z-index: -1;
 }
