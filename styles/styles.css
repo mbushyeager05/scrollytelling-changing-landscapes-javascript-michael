@@ -66,7 +66,7 @@ img {
 }
 
 .theme_city .layer__content {
-  padding-top: 120vh;
+  padding-top: 60vh;
 }
 
 .layer__illustration img {
@@ -84,6 +84,13 @@ img {
   left: auto;
 }
 
+.theme_city .layer__illustration img {
+  height: 520vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
 .theme_horizon .content-block--left {
   margin-top: 40vh;
 }
@@ -94,11 +101,11 @@ img {
 
 section {
   position: relative;
-  overflow: clip;
+  overflow: visible;
 }
 
 .theme_horizon  { height: 350vh; }
-.theme_city     { height: 600vh; }
+.theme_city     { height: 370vh; z-index: 2; }
 .theme_forest   { height: 350vh; }
 .theme_mountains { height: 350vh; }
 .theme_coast    { height: 350vh; }
@@ -240,6 +247,10 @@ pre code {
 .cloud-f { top: 100vh; left: 30%;  width: 280px; }
 .cloud-g { top: 130vh; left: 5%;   width: 220px; }
 .cloud-h { top: 160vh; right: 6%;  width: 260px; }
+.cloud-i { top: 190vh; left: 15%;  width: 300px; }
+.cloud-j { top: 215vh; right: 12%; width: 240px; }
+.cloud-k { top: 245vh; left: 40%;  width: 280px; }
+.cloud-l { top: 270vh; right: 3%;  width: 220px; }
 
 
 .scroll-prompt {

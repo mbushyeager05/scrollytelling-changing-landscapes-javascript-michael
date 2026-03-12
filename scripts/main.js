@@ -1,8 +1,17 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!prefersReducedMotion) {
+
+  ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.5,
+    effects: true,
+    smoothTouch: 0.1,
+    normalizeScroll: true
+  });
 
   // ── INITIAL STATES ──────────────────────────────────────────
 
@@ -12,6 +21,7 @@ if (!prefersReducedMotion) {
   gsap.set(".sun", { opacity: 0, scale: 0.6, y: 150, transformOrigin: "50% 50%" });
   gsap.set(".horizon-night-overlay", { opacity: 0 });
   gsap.set(".theme_horizon .content-block--left", { opacity: 0 });
+  gsap.set(".theme_city .layer__illustration", { yPercent: 100 });
 
   // ── HORIZON ─────────────────────────────────────────────────
 
@@ -140,5 +150,46 @@ if (!prefersReducedMotion) {
   gsap.to(".cloud-f", { x: "-=120", duration: 11, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 3 });
   gsap.to(".cloud-g", { x: "+=130", duration: 13, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 5 });
   gsap.to(".cloud-h", { x: "-=100", duration: 10, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 2 });
+
+  gsap.to(".cloud-i", { x:  480, ease: "none", scrollTrigger: { trigger: ".theme_horizon", start: "60% top", end: "90% top", scrub: 1 } });
+  gsap.to(".cloud-j", { x: -460, ease: "none", scrollTrigger: { trigger: ".theme_horizon", start: "65% top", end: "95% top", scrub: 1.2 } });
+  gsap.to(".cloud-k", { x:  500, ease: "none", scrollTrigger: { trigger: ".theme_horizon", start: "70% top", end: "bottom top", scrub: 0.9 } });
+  gsap.to(".cloud-l", { x: -440, ease: "none", scrollTrigger: { trigger: ".theme_horizon", start: "75% top", end: "bottom top", scrub: 1.1 } });
+
+  gsap.to(".cloud-i", { x: "+=110", duration: 14, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1 });
+  gsap.to(".cloud-j", { x: "-=130", duration: 12, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 3 });
+  gsap.to(".cloud-k", { x: "+=120", duration: 15, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0 });
+  gsap.to(".cloud-l", { x: "-=100", duration: 11, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 4 });
+
+  // ── CITY ─────────────────────────────────────────────────────
+
+  // City content blocks start hidden
+  gsap.set(".theme_city .layer__content > *", { opacity: 0, y: 60 });
+
+  // Each block pops up as it scrolls into view
+  gsap.utils.toArray(".theme_city .layer__content > *").forEach((el) => {
+    gsap.to(el, {
+      opacity: 1,
+      y: 0,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        end: "top 50%",
+        scrub: 1.2
+      }
+    });
+  });
+
+  gsap.to(".theme_city .layer__illustration", {
+    yPercent: 0,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".theme_horizon",
+      start: "50% top",
+      end: "bottom top",
+      scrub: 5
+    }
+  });
 
 }
