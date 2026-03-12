@@ -2,623 +2,470 @@
 @import url('tanker.css');
 @import url('satoshi.css');
 
-/* CSS Reset */
-* {
+/* ============================================================
+   RESET
+   ============================================================ */
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
 html {
   overflow-x: hidden;
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+  background: #000;
 }
 
 section {
   margin: 0;
   padding: 0;
-  display: flow-root;
 }
 
-
-/* ─── HORIZON SECTION ─── */
-
-h1 {
-    font-family: var(--font-heading);
-    font-size: var(--heading-h1);
-    color: var(--gray-100);
-    letter-spacing: 0.1em;
-    margin-bottom: var(--xs);
-    margin-left: 5rem;
-    margin-top: 18rem;
-    max-width: calc(100% - 5rem);
-    opacity: 0; /* revealed by GSAP intro */
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.theme_horizon__subtitle {
-    opacity: 0; /* revealed by GSAP intro */
-    margin-left: 5rem;
+/* ============================================================
+   LAYER SYSTEM
+   ============================================================ */
+
+.layer__background,
+.layer__illustration,
+.layer__elements {
+  position: absolute;
+  inset: 0;
 }
 
-h4 {
-    font-family: var(--font-subheadings);
-    font-size: var(--heading-h4);
-    color: var(--gray-700);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+.layer__background {
+  z-index: 0;
 }
 
-.theme_horizon__content,
-.theme_horizon__text {
-  position: relative;
+.layer__illustration {
+  z-index: 1;
+}
+
+.layer__elements {
   z-index: 2;
 }
 
-.sun {
-  position: absolute;
-  top: 8rem;
-  left: 50%;
-  width: 1520px;
-  height: 1520px;
-  transform: translateX(-50%);
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  clip-path: inset(0); /* Ensures the sun doesn't overflow outside its container */
-}
-
-/* ─── FIX: Horizon illustration scales with the page ─── */
-.horizon-illustration {
+.layer__content {
   position: relative;
-  width: 55%;
-   bottom: 0;
-  left: 50%;
   z-index: 3;
-  pointer-events: none;
-  margin-top: -5%;
+  padding-top: 40vh;
 }
 
-.horizon-illustration img:first-child {
-  width: 100%;
-  height: auto;
+.theme_horizon .layer__content {
+  padding-top: 5vh;
+}
+
+.theme_city .layer__content {
+  padding-top: 120vh;
+}
+
+.layer__illustration img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150%;
+  height: 75%;
   display: block;
 }
 
-/* ─── Character anchored to the cliff in the illustration ─── */
-.character-sitting {
-  position: absolute;
-  bottom: 44%;
-  right: 16%;
-  width: 3vw;
-  height: auto;
-  z-index: 4;
-  pointer-events: none;
+.theme_horizon .layer__illustration img {
+  width: 55%;
+  right: 0;
+  left: auto;
 }
 
-
-.theme_horizon__text {
-    height: auto;
-    width: 860px;
-    font-family: var(--font-body);
-    font-size: var(--body-m);
-    color: var(--gray-700);
-    line-height: 1.5;
-    margin-bottom: var(--s);
-    line-height: 2rem;
-    padding: 2rem;
-    border-radius: 20px 20px 20px 20px;
-    background: var(--Surface-Colors-surface-primary, #FFF);
-    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 8rem;
-    margin-top: 15rem;
+.theme_horizon .content-block--left {
+  margin-top: 40vh;
 }
 
+/* ============================================================
+   SECTION HEIGHTS
+   ============================================================ */
 
-/* ─── BACKGROUND COLORS ─── */
+section {
+  position: relative;
+  overflow: clip;
+}
+
+.theme_horizon  { height: 350vh; }
+.theme_city     { height: 600vh; }
+.theme_forest   { height: 350vh; }
+.theme_mountains { height: 350vh; }
+.theme_coast    { height: 350vh; }
+.theme_desert   { height: 350vh; }
+.theme_cave     { height: 350vh; }
+.theme_nightsky { height: 300vh; }
+.theme_journey  { height: 300vh; }
+
+/* ============================================================
+   SECTION BACKGROUNDS
+   ============================================================ */
 
 .theme_horizon {
-  background: linear-gradient(180deg,
-    #76A5AE 0%,
-    #8AAFB5 15%,
-    #A4BDB5 30%,
-    #C8C9AA 45%,
-    #DFC69A 60%,
-    #E8C18F 75%,
-    #D4956E 88%,
-    #B8714A 100%
-  );
-  height: 500vh;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
+  background: linear-gradient(180deg, #87CEEB 0%, #B8D4E8 25%, #DFC69A 60%, #D4956E 80%, #B8714A 100%);
 }
 
-/* City - Dark slate teal gradient */
 .theme_city {
-  background: linear-gradient(180deg,
-    #8B6845 0%,
-    #6B5A52 12%,
-    #4E5862 22%,
-    #3D5A6B 35%,
-    #416773 50%,
-    #4A7581 65%,
-    #52838F 78%,
-    #5B919D 90%,
-    #659FAB 100%
-  );
-  height: 580vh;
-  position: relative;
-  z-index: 6;
-  margin-top: -30vh;
-  padding-top: 30vh;
-  overflow: hidden;
+  background: linear-gradient(180deg, #1a1a2e 0%, #2d2d44 30%, #3D5A6B 60%, #659FAB 100%);
 }
 
-/* Forest - Emerald to mint gradient */
 .theme_forest {
-  background: linear-gradient(180deg, 
-    #1A7A6F 0%,
-    #268B7E 20%,
-    #329B8C 40%,
-    #4BAA97 60%,
-    #6BB9A4 80%,
-    #A3D9C4 100%
-  );
-  height: 300vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(180deg, #1a3d2b 0%, #2d5a3d 30%, #3d7a52 60%, #A3D9C4 100%);
 }
 
-/* Mountains - Teal to green to yellow */
 .theme_mountains {
-  background: linear-gradient(180deg, 
-    #1F5A6B 0%,
-    #2A6D7A 15%,
-    #3D8089 30%,
-    #5B9477 45%,
-    #7AA765 60%,
-    #9BB954 75%,
-    #C5CC49 90%,
-    #EAD84F 100%
-  );
-  height: 350vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(180deg, #87CEEB 0%, #6BA3BE 25%, #4a7a6e 55%, #7AA765 80%, #EAD84F 100%);
 }
 
-/* Coast - Bright turquoise to light blue */
 .theme_coast {
-  background: linear-gradient(180deg, 
-    #29B8CA 0%,
-    #3DC2D4 20%,
-    #52CCDE 40%,
-    #6FD5E5 60%,
-    #92DEEC 80%,
-    #C1EBF5 100%
-  );
-  height: 300vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(180deg, #87CEEB 0%, #52CCDE 35%, #29B8CA 65%, #1a4a6a 100%);
 }
 
-/* Desert - Brown to orange to peachy yellow */
 .theme_desert {
-  background: linear-gradient(180deg, 
-    #5B3A29 0%,
-    #7A4A2E 15%,
-    #995A33 30%,
-    #B76F3E 45%,
-    #D18748 60%,
-    #E5A05C 75%,
-    #F3B878 90%,
-    #FAD08E 100%
-  );
-  height: 300vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(180deg, #E8C08A 0%, #D4956E 30%, #B8714A 55%, #8B5A3A 80%, #5B3A29 100%);
 }
 
-/* Cave - Black to dark teal */
 .theme_cave {
-  background: linear-gradient(180deg, 
-    #000000 0%,
-    #0A0F12 20%,
-    #141D23 40%,
-    #1E2B33 60%,
-    #283943 80%,
-    #334852 100%
-  );
-  height: 300vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(180deg, #2a1a0a 0%, #1a1208 30%, #0a0a0a 60%, #000000 100%);
 }
 
-/* Night Sky - Black to dark blue to purple */
 .theme_nightsky {
-  background: linear-gradient(180deg, 
-    #000000 0%,
-    #0D1219 15%,
-    #1A2332 30%,
-    #27344B 45%,
-    #344564 60%,
-    #42567D 75%,
-    #516796 90%,
-    #6078AF 100%
-  );
-  height: 200vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(180deg, #000000 0%, #0a0a1a 30%, #1a1a3a 60%, #2a2a5a 100%);
 }
 
 .theme_journey {
-  background: linear-gradient(180deg, 
-    #76A5AE 0%,
-    #8AAFB5 15%,
-    #A4BDB5 30%,
-    #C8C9AA 45%,
-    #DFC69A 60%,
-    #E8C18F 75%,
-    #EDBD84 90%,
-    #F0BA7E 100%
-  );
-  height: 250vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(180deg, #87CEEB 0%, #B8D4E8 25%, #DFC69A 60%, #D4956E 80%, #B8714A 100%);
 }
 
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
 
-/* ─── ILLUSTRATION WRAPPERS ─── */
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--heading-h1);
+  color: var(--gray-100);
+  letter-spacing: 0.05em;
+  line-height: 0.9;
+}
 
-.city-illustration,
-.forest-illustration,
-.mountains-illustration,
-.coast-illustration,
-.desert-illustration,
-.cave-illustration,
-.nightsky-illustration {
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--heading-h2);
+  color: var(--gray-900);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+h3 {
+  font-family: var(--font-subheadings);
+  font-size: var(--heading-h3);
+  color: var(--gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+}
+
+h4 {
+  font-family: var(--font-subheadings);
+  font-size: var(--heading-h4);
+  color: var(--gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--body-l);
+  color: var(--gray-900);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  margin-bottom: 0;
+}
+
+code {
+  font-family: monospace;
+  font-size: var(--body-m);
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--gray-900);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  overflow-x: auto;
+  margin: 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-family: monospace;
+  font-size: var(--body-m);
+  color: var(--gray-100);
+  line-height: 1.7;
+  border-radius: 0;
+}
+
+/* ============================================================
+   HORIZON SECTION ELEMENTS
+   ============================================================ */
+
+.sun {
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+  top: 5vh;
+  left: -8%;
+  width: 1000px;
+  height: 1000px;
 }
 
-.city-illustration {
-  top: -30vh;
-  bottom: auto;
-  height: calc(100% + 30vh);
-  z-index: 40;
-}
-
-.city-illustration img,
-.forest-illustration img,
-.mountains-illustration img,
-.coast-illustration img,
-.desert-illustration img,
-.cave-illustration img,
-.nightsky-illustration img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.city-illustration img {
-  object-position: center bottom;
-}
-
-.theme_city > *:not(.city-illustration):not(.traffic-light),
-.theme_forest > *:not(.forest-illustration),
-.theme_mountains > *:not(.mountains-illustration),
-.theme_coast > *:not(.coast-illustration),
-.theme_desert > *:not(.desert-illustration):not(.desert-cactus),
-.theme_cave > *:not(.cave-illustration),
-.theme_nightsky > *:not(.nightsky-illustration) {
-  position: relative;
-  z-index: 1;
-}
-
-.theme_city > *:not(.city-illustration):not(.traffic-light) {
-  z-index: 50;
-}
-
-/* ─── DESERT CACTI ─── */
-
-.desert-cactus {
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
-  pointer-events: none;
-  height: 15%;
-  width: auto;
-}
-
-.desert-cactus--1 {
-  left: 3%;
-}
-
-.desert-cactus--2 {
-  left: 45%;
-  transform: translateX(-50%);
-}
-
-.desert-cactus--3 {
-  right: 3%;
-}
-
-.traffic-light {
-  position: absolute;
-  right: 0%;
-  top: 55%;
-  width: 60%;
-  height: auto;
-  z-index: -1;
-  pointer-events: none;
-}
+.cloud-a { top: 4vh;   left: 20%;  width: 320px; }
+.cloud-b { top: 10vh;  right: 4%;  width: 260px; }
+.cloud-c { top: 18vh;  left: 45%;  width: 200px; }
+.cloud-d { top: 55vh;  left: 8%;   width: 300px; }
+.cloud-e { top: 65vh;  right: 10%; width: 240px; }
+.cloud-f { top: 100vh; left: 30%;  width: 280px; }
+.cloud-g { top: 130vh; left: 5%;   width: 220px; }
+.cloud-h { top: 160vh; right: 6%;  width: 260px; }
 
 
-/* ─── SCROLL PROMPT ─── */
 .scroll-prompt {
   position: absolute;
-  top: 80vh;
+  bottom: 6vh;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  pointer-events: none;
+  gap: 0.5rem;
 }
 
 .scroll-prompt__text {
   font-family: var(--font-subheadings);
-  font-size: var(--body-l);
-  color: var(--gray-700);
-  letter-spacing: 0.2em;
+  font-size: var(--body-s);
+  color: var(--gray-100);
   text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
 .scroll-prompt__arrow {
-  width: 18px;
-  height: 18px;
-  border-right: 2px solid var(--gray-700);
-  border-bottom: 2px solid var(--gray-700);
-  transform: rotate(45deg);
-  animation: prompt-bounce 1.4s ease-in-out infinite;
+  width: 24px;
+  height: 24px;
+  border-right: 2px solid var(--gray-100);
+  border-bottom: 2px solid var(--gray-100);
 }
 
-@keyframes prompt-bounce {
-  0%, 100% { transform: rotate(45deg) translateY(0);   opacity: 1; }
-  50%       { transform: rotate(45deg) translateY(6px); opacity: 0.6; }
+.cloud {
+  position: absolute;
 }
-
-/* ─── CLOUDS ─── */
-.cloud { position: absolute; pointer-events: none; z-index: 2; }
-/* Left-side clouds — drift right on scroll */
-.cloud-a { bottom: 35%; left: -25%; width: 28%; opacity: 0.9; }
-.cloud-b { bottom: 28%; left: -45%; width: 24%; opacity: 0.85; }
-.cloud-c { bottom: 40%; left: -65%; width: 32%; opacity: 0.8; }
-.cloud-d { bottom: 22%; left: -80%; width: 20%; opacity: 0.75; }
-/* Right-side clouds — drift left on scroll */
-.cloud-e { top: 12%; right: -20%; width: 26%; opacity: 0.85; }
-.cloud-f { top: 20%; right: -40%; width: 22%; opacity: 0.8; }
-.cloud-g { top: 8%;  right: -60%; width: 30%; opacity: 0.75; }
-.cloud-h { top: 25%; right: -75%; width: 18%; opacity: 0.7; }
 
 .horizon-night-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #3D5A6B 0%, #1a2535 50%, #0d1219 100%);
-  opacity: 0;
-  z-index: 1;
+  background: #1a1a2e;
   pointer-events: none;
 }
 
-/* ─── TYPOGRAPHY ─── */
-
-h2 {
-    font-family: var(--font-heading);
-    font-size: var(--heading-h2);
-    color: var(--primary-900);
-    letter-spacing: 0.1em;
-    margin-bottom: var(--xs);
-    margin-left: .5rem;
+.horizon-hero {
+  padding-top: 20vh;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  max-width: 100%;
 }
 
-h3 {
-    font-family: var(--font-subheadings);
-    font-size: var(--heading-h3);
-    color: var(--gray-700);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--xs);
-    margin-left: .5rem;
-}
-
-p {
-    font-family: var(--font-body);
-    font-size: var(--body-m);
-    color: var(--gray-700);
-    line-height: 1.5;
-    margin-bottom: var(--s);
-    line-height: 2rem;
-}
-
-
-/* ─── UI COMPONENTS ─── */
-
-.heading {
-    width: fit-content;
-    height: auto;
-    padding: 2rem 4rem 2rem 7rem;
-    border-radius: 0 20px 20px 0;
-    background: var(--Surface-Colors-surface-primary, #FFF);
-    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    margin-top: 4rem;
-}
-
-.text-box-container-left {
-    width: 860px;
-    height: auto;
-    padding: 2rem;
-    margin-top: 4rem;
-    border-radius: 0 20px 20px 0;
-    background: var(--Surface-Colors-surface-primary, #FFF);
-    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.first_contact_heading {
-    width: fit-content;
-    height: auto;
-    padding: 2rem;
-    border-radius: 0 20px 20px 0;
-    background: var(--Surface-Colors-surface-primary, #FFF);
-    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
-}
-
-.text-box-container-right {
-    width: 860px;
-    height: auto;
-    padding: 2rem;
-    margin-top: 4rem;
-    margin-left: auto;
-    border-radius: 20px 0 0 20px;
-    background: var(--Surface-Colors-surface-primary, #FFF);
-    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    position: relative;
-    z-index: 1;
-}
-
-.teaching-code {
-    width: fit-content;
-    height: auto;
-    padding: 2rem;
-    margin-top: 4rem;
-    margin-left: auto;
-    border-radius: 20px 0 0 20px;
-    background: var(--Surface-Colors-surface-primary, #FFF);
-    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.what-shifted {
-    width: 860px;
-    height: auto;
-    padding: 2rem;
-    margin-top: 4rem;
-    border-radius: 0 20px 20px 0;
-    background: var(--Surface-Colors-surface-primary, #FFF);
-    box-shadow: 0 4px 18.9px 0 rgba(0, 0, 0, 0.25);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Pull the city's What Shifted box into the same scroll zone as the traffic light */
-.theme_city .what-shifted {
-    margin-top: 20rem;
-}
-
-
-/* ─── OCEAN / COAST SVGs ─── */
-
-.sun-theme-ocean {
-  position: absolute;
-  top: 30rem;
-  left: 50%;
-  width: 1520px;
-  height: 1520px;
-  transform: translateX(-50%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-#waves-svg {
-  position: absolute;
-  top: 30rem;
-  left: 50%;
-  width: 1520px;
-  height: 1520px;
-  transform: translateX(-50%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.character-city {
-  position: absolute;
-  top: 195%;
-  right: 17%;
-  width: 50%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-
-.humans-1{
-  position: absolute;
-  top: 70%;
-  left: 45%;
+.theme_horizon__title {
+  font-family: var(--font-heading);
+  font-size: var(--heading-h1);
+  color: var(--gray-900);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
   width: 100%;
-  z-index: -1;
 }
 
-.humans-2{
-  position: absolute;
-  top: 70%;
-  right: 65%;
-  width: 100%;
-  z-index: -1;
+.theme_horizon__subtitle {
+  font-family: var(--font-subheadings);
+  font-size: var(--heading-h2);
+  color: var(--gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
-.humans-3{
-  position: absolute;
-  top: 70%;
-  left: 45%;
-  width: 100%;
-  z-index: -1;
+/* ============================================================
+   SECTION HEADINGS
+   ============================================================ */
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  background: var(--netural-white);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin-top: 8vh;
+  margin-left: 4rem;
+  width: fit-content;
 }
 
+.section-heading--right {
+  margin-left: auto;
+  margin-right: 4rem;
+  text-align: right;
+}
+
+/* ============================================================
+   CONTENT BLOCKS
+   ============================================================ */
+
+.content-block {
+  width: min(640px, 85vw);
+  padding: 2rem 2.5rem;
+  background: var(--netural-white);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-top: 4vh;
+  margin-left: 4rem;
+}
+
+.content-block--right {
+  margin-left: auto;
+  margin-right: 4rem;
+}
+
+.content-block p {
+  font-family: var(--font-body);
+  font-size: var(--body-l);
+  color: var(--gray-900);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  margin-bottom: 0;
+}
+
+.content-block h4 {
+  font-family: var(--font-subheadings);
+  font-size: var(--heading-h4);
+  color: var(--gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
+
+.code-block {
+  width: min(640px, 85vw);
+  padding: 2rem 2.5rem;
+  background: var(--gray-900);
+  border-radius: 12px;
+  margin-top: 4vh;
+  margin-left: auto;
+  margin-right: 4rem;
+}
+
+.code-block--left {
+  margin-left: 4rem;
+  margin-right: auto;
+}
+
+.code-block p {
+  font-family: monospace;
+  font-size: var(--body-m);
+  color: var(--gray-100);
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.code-label {
+  font-family: var(--font-subheadings);
+  font-size: var(--body-s);
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 1.5rem;
+  display: block;
+}
+
+.console-output p {
+  font-family: monospace;
+  font-size: var(--body-m);
+  color: #22C55E;
+  line-height: 1.7;
+  letter-spacing: 0;
+  background: none;
+}
+
+/* ============================================================
+   SECTION-SPECIFIC ELEMENTS
+   ============================================================ */
 
 .birds-container {
-  z-index: -1;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
+.coast-sun {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff7a1 0%, #ffd700 60%, transparent 100%);
+}
 
+.compass-svg {
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  width: 160px;
+  height: 160px;
+  opacity: 0.7;
+}
 
-/* ─── GSAP REDUCED MOTION FALLBACK ─── */
-/* Only needed if user prefers reduced motion */
+.desert-cactus {
+  position: absolute;
+  bottom: 0;
+  width: 500px;
+  height: auto;
+}
+
+.desert-cactus--1 {
+  left: 5%;
+}
+
+.desert-cactus--2 {
+  left: 50%;
+}
+
+.desert-cactus--3 {
+  right: 5%;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
 @media (prefers-reduced-motion: reduce) {
-  .theme_horizon__title,
-  .theme_horizon__subtitle,
-  .sun {
-    opacity: 1 !important;
-    transform: none !important;
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
