@@ -84,6 +84,13 @@ img {
   left: auto;
 }
 
+.theme_forest .layer__illustration img {
+  height: 337vh;
+  width: 150%;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
 .theme_city .layer__illustration img {
   height: 520vh;
   width: 100%;
@@ -106,8 +113,8 @@ section {
 
 .theme_horizon  { height: 350vh; }
 .theme_city     { height: 370vh; z-index: 2; }
-.theme_forest   { height: 350vh; }
-.theme_mountains { height: 350vh; }
+.theme_forest   { height: 250vh; z-index: 2; }
+.theme_mountains { height: 350vh; z-index: 2; }
 .theme_coast    { height: 350vh; }
 .theme_desert   { height: 350vh; }
 .theme_cave     { height: 350vh; }
@@ -251,6 +258,21 @@ pre code {
 .cloud-j { top: 215vh; right: 12%; width: 240px; }
 .cloud-k { top: 245vh; left: 40%;  width: 280px; }
 .cloud-l { top: 270vh; right: 3%;  width: 220px; }
+
+.mountain-sun {
+  position: absolute;
+  top: 5vh;
+  left: 30%;
+  width: 700px;
+  height: 700px;
+}
+
+.mountain-cloud-a { top: 5vh;  left: -20px;  width: 500px; }
+.mountain-cloud-b { top: 15vh; right: -20px; width: 460px; }
+.mountain-cloud-c { top: 28vh; left: -10px;  width: 420px; }
+.mountain-cloud-d { top: 40vh; right: -10px; width: 400px; }
+.mountain-cloud-e { top: 55vh; left: 5%;     width: 440px; }
+.mountain-cloud-f { top: 68vh; right: 8%;    width: 380px; }
 
 
 .scroll-prompt {
@@ -428,16 +450,19 @@ pre code {
 
 .birds-container {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   pointer-events: none;
 }
 
 .coast-sun {
   position: absolute;
-  top: 10%;
-  right: 10%;
-  width: 120px;
-  height: 120px;
+  top: 8vh;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: radial-gradient(circle, #fff7a1 0%, #ffd700 60%, transparent 100%);
 }
