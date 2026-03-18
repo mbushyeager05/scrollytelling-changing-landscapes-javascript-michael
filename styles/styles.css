@@ -65,6 +65,14 @@ img {
   padding-top: 5vh;
 }
 
+.theme_coast .layer__content {
+  padding-top: 130vh;
+}
+
+.theme_desert .layer__content {
+  padding-top: 78vh;
+}
+
 .theme_city .layer__content {
   padding-top: 60vh;
 }
@@ -91,8 +99,42 @@ img {
   object-position: bottom center;
 }
 
+.forest-character {
+  position: absolute;
+  bottom: 0;
+  left: 34%;
+  width: 42%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.forest-bigfoot {
+  position: absolute;
+  bottom: -2%;
+  left: 0;
+  width: 44%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.mountain-character {
+  position: absolute;
+  bottom: 0;
+  left: 38%;
+  width: 32%;
+  pointer-events: none;
+  z-index: 3;
+}
+
 .theme_city .layer__illustration img {
   height: 520vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
+.theme_desert .layer__illustration img {
+  height: 350vh;
   width: 100%;
   object-fit: cover;
   object-position: bottom center;
@@ -115,9 +157,9 @@ section {
 .theme_city     { height: 370vh; z-index: 2; }
 .theme_forest   { height: 250vh; z-index: 2; }
 .theme_mountains { height: 350vh; z-index: 2; }
-.theme_coast    { height: 350vh; }
-.theme_desert   { height: 350vh; }
-.theme_cave     { height: 350vh; }
+.theme_coast    { height: 400vh; z-index: 2; }
+.theme_desert   { height: 350vh; z-index: 2; }
+.theme_cave     { height: 350vh; z-index: 2; }
 .theme_nightsky { height: 300vh; }
 .theme_journey  { height: 300vh; }
 
@@ -145,21 +187,208 @@ section {
   background: linear-gradient(180deg, #87CEEB 0%, #52CCDE 35%, #29B8CA 65%, #1a4a6a 100%);
 }
 
+.coast-sun-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.coast-flash-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.theme_coast .layer__illustration img {
+  height: 262vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
 .theme_desert {
-  background: linear-gradient(180deg, #E8C08A 0%, #D4956E 30%, #B8714A 55%, #8B5A3A 80%, #5B3A29 100%);
+  background-color: #D4956E;
 }
 
 .theme_cave {
-  background: linear-gradient(180deg, #2a1a0a 0%, #1a1208 30%, #0a0a0a 60%, #000000 100%);
+  background-color: #0a0a1a;
+}
+
+.theme_cave .layer__illustration img {
+  height: 350vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
+.cave-character {
+  position: absolute;
+  bottom: 63%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cave-torches {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cave-torch {
+  position: absolute;
+  bottom: 5%;
+  pointer-events: none;
+}
+
+.cave-torch--1 { 
+  right: -4%;
+  transform: rotate(-45deg);
+
+}
+.cave-torch--2 { left: 1%; bottom: 15%; transform: translateX(-50%);  transform: rotate(45deg);}
+.cave-torch--3 { right: 68%; bottom: -1%; }
+
+.cave-torch .tw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .theme_nightsky {
-  background: linear-gradient(180deg, #000000 0%, #0a0a1a 30%, #1a1a3a 60%, #2a2a5a 100%);
+  background-color: #0a0a1a;
 }
 
 .theme_journey {
-  background: linear-gradient(180deg, #87CEEB 0%, #B8D4E8 25%, #DFC69A 60%, #D4956E 80%, #B8714A 100%);
+  background: #87CEEB;
 }
+
+.horizon-cliff {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55%;
+  max-height: 80%;
+  object-fit: contain;
+  object-position: bottom right;
+  pointer-events: none;
+}
+
+
+.horizon-character {
+  position: absolute;
+  bottom: 67%;
+  right: 38%;
+  width: 14%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+.journey-character {
+  position: absolute;
+  bottom: 69%;
+  right: 15%;
+  width: 14%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+.nightsky-character {
+  position: absolute;
+  bottom: 69%;
+  right: 15%;
+  width: 14%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+.city-traffic-light {
+  position: absolute;
+  bottom: 0;
+  left: 70%;
+  transform: translateX(-50%);
+  height: 60%;
+  width: 60%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.city-humans {
+  position: absolute;
+  bottom: -8%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.city-humans--3  {
+  bottom: -10%;
+  left: -10%;
+}
+
+.city-humans--1 { left: 0; }
+.city-humans--2 { left: 0; }
+.city-humans--3 { left: 0; }
+
+.city-character {
+  position: absolute;
+  bottom: -3%;
+  left: 30%;
+  width: 40%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.theme_nightsky,
+.theme_journey {
+  overflow: hidden;
+}
+
+/* ── COAST WAVES ─────────────────────────────────────────── */
+
+.coast-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  pointer-events: none;
+}
+
+.coast-waves--back  { z-index: 3; }
+
+.coast-airplane {
+  position: absolute;
+  left: 0;
+  width: 12%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.coast-airplane--1 { top: 18vh; }
+.coast-airplane--2 { top: 30vh; width: 10%; }
+.coast-airplane--3 { top: 10vh; width: 8%; }
+
+.ocean-character {
+  position: absolute;
+  bottom: 4%;
+  left: 40%;
+  width: 24%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.coast-waves--front { z-index: 5; }
 
 /* ============================================================
    TYPOGRAPHY
@@ -176,7 +405,7 @@ h1 {
 h2 {
   font-family: var(--font-heading);
   font-size: var(--heading-h2);
-  color: var(--gray-900);
+  color: var(--text-colors-text-primary);
   letter-spacing: 0.05em;
   line-height: 1;
   margin-bottom: 0.4rem;
@@ -185,7 +414,7 @@ h2 {
 h3 {
   font-family: var(--font-subheadings);
   font-size: var(--heading-h3);
-  color: var(--gray-700);
+  color: var(--text-colors-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   line-height: 1.2;
@@ -194,7 +423,7 @@ h3 {
 h4 {
   font-family: var(--font-subheadings);
   font-size: var(--heading-h4);
-  color: var(--gray-700);
+  color: var(--text-colors-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   line-height: 1.3;
@@ -204,7 +433,7 @@ h4 {
 p {
   font-family: var(--font-body);
   font-size: var(--body-l);
-  color: var(--gray-900);
+  color: var(--text-colors-text-primary);
   line-height: 1.8;
   letter-spacing: 0.01em;
   margin-bottom: 0;
@@ -214,7 +443,7 @@ code {
   font-family: monospace;
   font-size: var(--body-m);
   background: rgba(0, 0, 0, 0.08);
-  color: var(--gray-900);
+  color: var(--text-colors-text-primary);
   padding: 0.15em 0.4em;
   border-radius: 4px;
 }
@@ -322,7 +551,7 @@ pre code {
 .theme_horizon__title {
   font-family: var(--font-heading);
   font-size: var(--heading-h1);
-  color: var(--gray-900);
+  color: var(--text-colors-text-primary);
   letter-spacing: 0.05em;
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -332,7 +561,7 @@ pre code {
 .theme_horizon__subtitle {
   font-family: var(--font-subheadings);
   font-size: var(--heading-h2);
-  color: var(--gray-700);
+  color: var(--text-colors-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
@@ -346,7 +575,7 @@ pre code {
   flex-direction: column;
   justify-content: center;
   padding: 1.5rem 2rem;
-  background: var(--netural-white);
+  background: var(--surface-colors-surface-primary);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
   margin-top: 8vh;
@@ -367,7 +596,7 @@ pre code {
 .content-block {
   width: min(640px, 85vw);
   padding: 2rem 2.5rem;
-  background: var(--netural-white);
+  background: var(--surface-colors-surface-primary);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   margin-top: 4vh;
@@ -382,7 +611,7 @@ pre code {
 .content-block p {
   font-family: var(--font-body);
   font-size: var(--body-l);
-  color: var(--gray-900);
+  color: var(--text-colors-text-primary);
   line-height: 1.8;
   letter-spacing: 0.01em;
   margin-bottom: 0;
@@ -391,7 +620,7 @@ pre code {
 .content-block h4 {
   font-family: var(--font-subheadings);
   font-size: var(--heading-h4);
-  color: var(--gray-700);
+  color: var(--text-colors-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   line-height: 1.3;
@@ -405,7 +634,7 @@ pre code {
 .code-block {
   width: min(640px, 85vw);
   padding: 2rem 2.5rem;
-  background: var(--gray-900);
+  background: var(--surface-colors-surface-code);
   border-radius: 12px;
   margin-top: 4vh;
   margin-left: auto;
@@ -459,21 +688,30 @@ pre code {
 
 .coast-sun {
   position: absolute;
-  top: 8vh;
-  left: calc(50% - 100px);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #fff7a1 0%, #ffd700 60%, transparent 100%);
+  top: 5vh;
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 500px;
 }
 
-.compass-svg {
+.coast-cloud-a { top: 6vh;  left: 3%;   width: 420px; }
+.coast-cloud-b { top: 18vh; right: 2%;  width: 380px; }
+.coast-cloud-c { top: 32vh; left: 18%;  width: 340px; }
+.coast-cloud-d { top: 10vh; left: 40%;  width: 360px; }
+.coast-cloud-e { top: 24vh; left: -5%;  width: 400px; }
+.coast-cloud-f { top: 42vh; right: 10%; width: 320px; }
+.coast-cloud-g { top: 55vh; left: 5%;   width: 360px; }
+.coast-cloud-h { top: 62vh; right: 5%;  width: 300px; }
+.coast-cloud-i { top: 50vh; left: 35%;  width: 340px; }
+.coast-cloud-j { top: 68vh; left: 15%;  width: 280px; }
+
+#compass-svg {
   position: absolute;
-  bottom: 10%;
-  right: 8%;
-  width: 160px;
-  height: 160px;
-  opacity: 0.7;
+  bottom: 45%;
+  left: 3%;
+  width: 420px;
+  height: 420px;
+  z-index: 5;
 }
 
 .desert-cactus {
@@ -495,6 +733,232 @@ pre code {
   right: 5%;
 }
 
+.desert-cactus--4 {
+  left: -2%;
+  width: 380px;
+}
+
+.desert-cactus--5 {
+  right: -2%;
+  width: 360px;
+}
+
+.desert-hand {
+  position: absolute;
+  bottom: 35%;
+  right: 58%;
+  width: 58%;
+  pointer-events: none;
+  transform: rotate(15deg);
+  z-index: 3;
+}
+
+/* ── JOURNEY SUN & CLOUDS ───────────────────────────────── */
+
+.journey-sun {
+  position: absolute;
+  top: 5vh;
+  left: -8%;
+  width: 1000px;
+  height: 1000px;
+}
+
+.journey-cloud {
+  position: absolute;
+}
+
+.journey-cloud--a { top: 4vh;   left: 20%;  width: 320px; }
+.journey-cloud--b { top: 10vh;  right: 4%;  width: 260px; }
+.journey-cloud--c { top: 18vh;  left: 45%;  width: 200px; }
+.journey-cloud--d { top: 55vh;  left: 8%;   width: 300px; }
+.journey-cloud--e { top: 65vh;  right: 10%; width: 240px; }
+.journey-cloud--f { top: 100vh; left: 30%;  width: 280px; }
+
+/* ── AURORA BOREALIS ─────────────────────────────────────── */
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+
+.aurora-band {
+  transform-origin: center center;
+}
+
+/* ============================================================
+   THEME SELECTOR
+   ============================================================ */
+
+.theme-toggle-wrap {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 9999;
+}
+
+.theme-select__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(20, 20, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.theme-select__btn:hover {
+  background: rgba(20, 20, 30, 0.85);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="light"] .theme-select__btn {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #1f2937;
+}
+
+.theme-select__caret {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.theme-select__dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 140px;
+  background: rgba(20, 20, 30, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .theme-select__dropdown {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.theme-select__dropdown.is-open {
+  display: block;
+}
+
+.theme-select__option {
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #f3f4f6;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+[data-theme="light"] .theme-select__option {
+  color: #1f2937;
+}
+
+.theme-select__option:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="light"] .theme-select__option:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.theme-select__option.is-active {
+  color: var(--accent-500);
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+
+.back-to-top-wrap {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.back-to-top-btn {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  padding: 14px 32px;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.back-to-top-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.site-footer {
+  background-color: #0a0a1a;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.site-footer__inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.site-footer__title {
+  font-size: 1.4rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px;
+}
+
+.site-footer__sub {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 32px;
+}
+
+.site-footer__divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 auto 24px;
+}
+
+.site-footer__copy {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
 /* ============================================================
    REDUCED MOTION
    ============================================================ */
@@ -503,5 +967,533 @@ pre code {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* ============================================================
+   MEDIA QUERIES
+   ============================================================ */
+
+/* ── MOBILE — up to 480px ──────────────────────────────────── */
+@media (max-width: 480px) {
+
+  .theme_horizon  { height: 500vh; }
+  .theme_city     { height: 500vh; }
+  .theme_forest   { height: 400vh; }
+  .theme_mountains { height: 400vh; }
+  .theme_coast    { height: 450vh; }
+  .theme_desert   { height: 400vh; }
+  .theme_cave     { height: 400vh; }
+  .theme_nightsky { height: 350vh; }
+  .theme_journey  { height: 350vh; }
+
+  .horizon-hero {
+    padding-top: 12vh;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .theme_horizon__title {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  .theme_horizon__subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  h2 { font-size: 2rem; }
+  h3 { font-size: 0.9rem; letter-spacing: 0.1em; }
+  h4 { font-size: 0.85rem; }
+  p  { font-size: 0.9rem; line-height: 1.7; }
+
+  .section-heading {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1rem 1.25rem;
+    width: calc(100% - 2rem);
+    max-width: 100%;
+  }
+
+  .section-heading--right {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: left;
+  }
+
+  .content-block {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+  }
+
+  .content-block--right {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .code-block {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+  }
+
+  .code-block--left {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .layer__content {
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+  }
+
+  .theme_city .layer__content {
+    padding-top: 40vh;
+  }
+
+  .theme_coast .layer__content {
+    padding-top: 100vh;
+  }
+
+  .theme_horizon .content-block--left {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 15vh;
+  }
+
+  .city-traffic-light {
+    width: 90%;
+    left: 5%;
+    transform: none;
+  }
+
+  #compass-svg {
+    width: 200px;
+    height: 200px;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .desert-cactus {
+    width: 200px;
+  }
+
+  .theme-toggle-wrap {
+    top: 12px;
+    right: 12px;
+  }
+
+  .theme-select__btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .scroll-prompt__text {
+    font-size: 0.65rem;
+  }
+
+  .aurora {
+    height: 35%;
+  }
+
+  .sun {
+    width: 500px;
+    height: 500px;
+  }
+
+  .journey-sun {
+    width: 500px;
+    height: 500px;
+  }
+
+  .mountain-sun {
+    width: 400px;
+    height: 400px;
+  }
+
+  .horizon-character {
+    bottom: 71%;
+    right: 32%;
+  }
+
+  .nightsky-character {
+    bottom: 73%;
+    right: 9%;
+  }
+
+  .journey-character {
+    bottom: 73%;
+    right: 9%;
+  }
+}
+
+/* ── TABLET — 481px to 768px ───────────────────────────────── */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .horizon-hero {
+    padding-top: 14vh;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .theme_horizon__title {
+    font-size: 5rem;
+  }
+
+  .theme_horizon__subtitle {
+    font-size: 1.2rem;
+  }
+
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 1.1rem; }
+
+  .section-heading {
+    margin-left: 1.5rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .section-heading--right {
+    margin-right: 1.5rem;
+    margin-left: auto;
+  }
+
+  .content-block {
+    width: min(520px, calc(100% - 3rem));
+    margin-left: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .content-block--right {
+    margin-left: auto;
+    margin-right: 1.5rem;
+  }
+
+  .code-block {
+    width: min(520px, calc(100% - 3rem));
+    margin-left: 1.5rem;
+  }
+
+  .code-block--left {
+    margin-left: 1.5rem;
+    margin-right: auto;
+  }
+
+  #compass-svg {
+    width: 280px;
+    height: 280px;
+  }
+
+  .sun {
+    width: 600px;
+    height: 600px;
+  }
+
+  .journey-sun {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+/* ── SMALL DESKTOP — 769px to 1024px ──────────────────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .theme_horizon__title {
+    font-size: 7rem;
+  }
+
+  .section-heading {
+    margin-left: 2.5rem;
+  }
+
+  .section-heading--right {
+    margin-left: auto;
+    margin-right: 2.5rem;
+  }
+
+  .content-block {
+    width: min(560px, 80vw);
+    margin-left: 2.5rem;
+  }
+
+  .content-block--right {
+    margin-left: auto;
+    margin-right: 2.5rem;
+  }
+
+  .code-block {
+    width: min(560px, 80vw);
+  }
+
+  #compass-svg {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+/* ── DESKTOP — 1025px to 1440px ───────────────────────────── */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* Base styles already target this range — no overrides needed */
+}
+
+/* ── LARGE DESKTOP — 1441px to 1919px ─────────────────────── */
+@media (min-width: 1441px) and (max-width: 1919px) {
+
+  .theme_horizon__title {
+    font-size: 10rem;
+  }
+
+  .theme_horizon__subtitle {
+    font-size: 2.2rem;
+  }
+
+  h2 { font-size: 4rem; }
+  h3 { font-size: 1.6rem; }
+  h4 { font-size: 1.4rem; }
+  p  { font-size: 1.125rem; line-height: 1.9; }
+
+  .section-heading {
+    padding: 2rem 3rem;
+    margin-left: 6rem;
+  }
+
+  .section-heading--right {
+    margin-left: auto;
+    margin-right: 6rem;
+  }
+
+  .content-block {
+    width: min(780px, 80vw);
+    padding: 2.5rem 3.5rem;
+    margin-left: 6rem;
+  }
+
+  .content-block--right {
+    margin-left: auto;
+    margin-right: 6rem;
+  }
+
+  .code-block {
+    width: min(780px, 80vw);
+    padding: 2.5rem 3.5rem;
+    margin-left: 6rem;
+  }
+
+  .code-block--left {
+    margin-left: 6rem;
+  }
+
+  .sun {
+    width: 1200px;
+    height: 1200px;
+  }
+
+  .journey-sun {
+    width: 1200px;
+    height: 1200px;
+  }
+
+  #compass-svg {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+/* ── TV / LARGE SCREEN — 1920px and above ──────────────────── */
+@media (min-width: 1920px) {
+
+  html {
+    font-size: 20px;
+  }
+
+  .theme_horizon__title {
+    font-size: 12rem;
+    line-height: 0.85;
+  }
+
+  .theme_horizon__subtitle {
+    font-size: 2.8rem;
+    letter-spacing: 0.25em;
+  }
+
+  h2 { font-size: 5rem; }
+  h3 { font-size: 2rem; letter-spacing: 0.2em; }
+  h4 { font-size: 1.6rem; letter-spacing: 0.15em; }
+  p  { font-size: 1.25rem; line-height: 2; }
+
+  pre code {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .section-heading {
+    padding: 2.5rem 4rem;
+    margin-left: 8rem;
+    border-radius: 16px;
+    margin-top: 12vh;
+  }
+
+  .section-heading--right {
+    margin-right: 8rem;
+    margin-left: auto;
+  }
+
+  .content-block {
+    width: min(960px, 75vw);
+    padding: 3rem 4rem;
+    margin-left: 8rem;
+    border-radius: 16px;
+  }
+
+  .content-block--right {
+    margin-left: auto;
+    margin-right: 8rem;
+  }
+
+  .code-block {
+    width: min(960px, 75vw);
+    padding: 3rem 4rem;
+    margin-left: 8rem;
+    border-radius: 16px;
+  }
+
+  .code-block--left {
+    margin-left: 8rem;
+    margin-right: auto;
+  }
+
+  .horizon-hero {
+    padding-top: 18vh;
+    padding-left: 8rem;
+  }
+
+  .layer__content {
+    padding-top: 50vh;
+    padding-bottom: 25vh;
+  }
+
+  .theme_city .layer__content {
+    padding-top: 140vh;
+  }
+
+  .theme_coast .layer__content {
+    padding-top: 220vh;
+  }
+
+  .sun {
+    width: 1400px;
+    height: 1400px;
+  }
+
+  .journey-sun {
+    width: 1400px;
+    height: 1400px;
+  }
+
+  .mountain-sun {
+    width: 900px;
+    height: 900px;
+  }
+
+  #compass-svg {
+    width: 600px;
+    height: 600px;
+  }
+
+  .desert-cactus {
+    width: 700px;
+  }
+
+  .coast-sun {
+    width: 700px;
+    height: 700px;
+    left: calc(50% - 350px);
+  }
+
+  .theme-toggle-wrap {
+    top: 28px;
+    right: 36px;
+  }
+
+  .theme-select__btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+
+  .theme-select__dropdown {
+    min-width: 180px;
+  }
+
+  .theme-select__option {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  .scroll-prompt__text {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+  }
+
+  .scroll-prompt__arrow {
+    width: 22px;
+    height: 22px;
+  }
+
+  .aurora {
+    height: 55%;
+  }
+
+  .back-to-top-btn {
+    padding: 18px 44px;
+    font-size: 1.2rem;
+  }
+
+  .site-footer {
+    padding: 80px 20px;
+  }
+
+  .site-footer__title {
+    font-size: 2rem;
+  }
+
+  .site-footer__sub {
+    font-size: 1.1rem;
+  }
+
+  .site-footer__copy {
+    font-size: 1rem;
+  }
+}
+
+/* ── 4K — 3840px and above ──────────────────────────────────── */
+@media (min-width: 3840px) {
+
+  html {
+    font-size: 32px;
+  }
+
+  .content-block {
+    width: min(1400px, 70vw);
+  }
+
+  .code-block {
+    width: min(1400px, 70vw);
+  }
+
+  .sun {
+    width: 2000px;
+    height: 2000px;
+  }
+
+  .journey-sun {
+    width: 2000px;
+    height: 2000px;
   }
 }

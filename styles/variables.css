@@ -69,7 +69,7 @@
 
 
 /* Collection name: semantic_colors */
-/* Mode: Mode: Dark */
+/* Mode: Dark (default) */
 :root {
   --surface-colors-surface-primary: var(--gray-900);
   --text-colors-text-primary: var(--gray-100);
@@ -84,20 +84,33 @@
   --section-colors-sand-primary: var(--sand-600);
 }
 
-/* Collection name: semantic_colors */
-/* Mode: Mode: Light */
-:root {
+/* OS preference: light */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --surface-colors-surface-primary: var(--netural-white);
+    --text-colors-text-primary: var(--gray-900);
+    --surface-colors-surface-secondary: var(--gray-100);
+    --surface-colors-surface-code: var(--gray-900);
+    --text-colors-text-secondary: var(--gray-700);
+  }
+}
+
+/* Explicit light mode */
+[data-theme="light"] {
   --surface-colors-surface-primary: var(--netural-white);
   --text-colors-text-primary: var(--gray-900);
-  --accent-colors-accent-primary: var(--accent-500);
   --surface-colors-surface-secondary: var(--gray-100);
   --surface-colors-surface-code: var(--gray-900);
   --text-colors-text-secondary: var(--gray-700);
-  --text-colors-text-on-dark: var(--gray-100);
-  --accent-colors-accent-highlight: var(--accent-400);
-  --section-colors-forest-primary: var(--green-700);
-  --section-colors-ocean-primary: var(--blue-600);
-  --section-colors-sand-primary: var(--sand-600);
+}
+
+/* Explicit dark mode */
+[data-theme="dark"] {
+  --surface-colors-surface-primary: var(--gray-900);
+  --text-colors-text-primary: var(--gray-100);
+  --surface-colors-surface-secondary: var(--gray-800);
+  --surface-colors-surface-code: var(--gray-950);
+  --text-colors-text-secondary: var(--gray-300);
 }
 
 
