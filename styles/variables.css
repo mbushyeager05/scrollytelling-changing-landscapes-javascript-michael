@@ -1,5 +1,30 @@
 @import url('tanker.css');
 
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('../assets/Satoshi-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Medium';
+  src: url('../assets/Satoshi-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('../assets/Satoshi-Bold.woff2') format('woff2'),
+       url('../assets/Satoshi-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
 /* Collection name: primitives_colors */
 /* Mode: Mode 1 */
 :root {

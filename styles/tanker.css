@@ -12,9 +12,9 @@
 */
 @font-face {
   font-family: 'Tanker-Regular';
-  src: url('../fonts/Tanker-Regular.woff2') format('woff2'),
-       url('../fonts/Tanker-Regular.woff') format('woff'),
-       url('../fonts/Tanker-Regular.ttf') format('truetype');
+  src: url('../assets/Tanker-Regular.woff2') format('woff2'),
+       url('../assets/Tanker-Regular.woff') format('woff'),
+       url('../assets/Tanker-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
