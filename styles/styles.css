@@ -169,7 +169,7 @@ section {
 
 .theme_horizon  { height: 350vh; }
 .theme_city     { height: 370vh; z-index: 2; }
-.theme_forest   { height: 250vh; z-index: 2; }
+.theme_forest   { height: 350vh; z-index: 2; }
 .theme_mountains { height: 350vh; z-index: 2; }
 .theme_coast    { height: 400vh; z-index: 2; }
 .theme_desert   { height: 350vh; z-index: 2; }
