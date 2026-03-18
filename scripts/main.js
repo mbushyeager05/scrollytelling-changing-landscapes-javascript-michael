@@ -1,13 +1,5 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-// If returning from Back to Top, reset scroll before ScrollSmoother initializes
-if (sessionStorage.getItem("scrollToTop")) {
-  sessionStorage.removeItem("scrollToTop");
-  history.scrollRestoration = "manual";
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
-}
-
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!prefersReducedMotion) {
