@@ -1,5 +1,13 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+// If returning from Back to Top, reset scroll before ScrollSmoother initializes
+if (sessionStorage.getItem("scrollToTop")) {
+  sessionStorage.removeItem("scrollToTop");
+  history.scrollRestoration = "manual";
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
+
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!prefersReducedMotion) {
@@ -1536,10 +1544,9 @@ if (!prefersReducedMotion) {
 
 }
 
-// Back to top — scroll to top then reload to reset all animations
+// Back to top — reload to reset all animations, flag ensures scroll starts at 0
 document.getElementById("backToTop").addEventListener("click", () => {
-  history.scrollRestoration = "manual";
-  window.scrollTo(0, 0);
+  sessionStorage.setItem("scrollToTop", "1");
   window.location.reload();
 });
 
