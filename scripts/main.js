@@ -1536,8 +1536,10 @@ if (!prefersReducedMotion) {
 
 }
 
-// Back to top — reload the page to reset all animations
+// Back to top — scroll to top then reload to reset all animations
 document.getElementById("backToTop").addEventListener("click", () => {
+  history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
   window.location.reload();
 });
 
