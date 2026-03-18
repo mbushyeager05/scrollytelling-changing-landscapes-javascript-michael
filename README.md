@@ -18,8 +18,8 @@ The theme toggle in the top right corner lets users switch between Dark, Light, 
 Key design choices came from wanting every element to feel intentional. The Tanker typeface was chosen for its bold display character that commands attention on large screens and TV presentations. Satoshi was chosen for body text for its clean, modern readability. The card system uses floating white rounded rectangles with subtle shadows to create a consistent visual language that sits on top of every illustration without competing with it. The left and right alternating card positions create a natural reading rhythm as you scroll through each section.
 
 #### Links
-Live site: [your GitHub Pages URL here]
-Repo: [your repo URL here]
+Live site: [https://mbushyeager05.github.io/scrollytelling-changing-landscapes-javascript-michael/]
+Repo: [https://github.com/mbushyeager05/scrollytelling-changing-landscapes-javascript-michael]
 
 #### Tech Stack
 HTML, CSS, JavaScript, GSAP, ScrollTrigger, ScrollSmoother

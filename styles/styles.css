@@ -575,7 +575,7 @@ pre code {
 .theme_horizon__subtitle {
   font-family: var(--font-subheadings);
   font-size: var(--heading-h2);
-  color: #ffffff;
+  color: var(--text-colors-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
