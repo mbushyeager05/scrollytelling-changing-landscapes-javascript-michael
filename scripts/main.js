@@ -1566,25 +1566,63 @@ document.getElementById("backToTop").addEventListener("click", () => {
   const saved = localStorage.getItem("theme") || "dark";
   applyTheme(saved);
 
+  function closeDropdown() {
+    dropdown.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+  }
+
+  function openDropdown() {
+    dropdown.classList.add("is-open");
+    btn.setAttribute("aria-expanded", "true");
+    options[0].focus();
+  }
+
   // Toggle dropdown open/close
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
-    const isOpen = dropdown.classList.toggle("is-open");
-    btn.setAttribute("aria-expanded", isOpen);
+    dropdown.classList.contains("is-open") ? closeDropdown() : openDropdown();
   });
 
-  // Option selection
-  options.forEach(opt => {
+  // Keyboard: open dropdown with Enter/Space, close with Escape
+  btn.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      dropdown.classList.contains("is-open") ? closeDropdown() : openDropdown();
+    } else if (e.key === "Escape") {
+      closeDropdown();
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      openDropdown();
+    }
+  });
+
+  // Option selection — click and keyboard
+  options.forEach((opt, i) => {
+    opt.setAttribute("tabindex", "-1");
     opt.addEventListener("click", () => {
       applyTheme(opt.dataset.value);
-      dropdown.classList.remove("is-open");
-      btn.setAttribute("aria-expanded", "false");
+      closeDropdown();
+      btn.focus();
+    });
+    opt.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        applyTheme(opt.dataset.value);
+        closeDropdown();
+        btn.focus();
+      } else if (e.key === "Escape") {
+        closeDropdown();
+        btn.focus();
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        options[(i + 1) % options.length].focus();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        options[(i - 1 + options.length) % options.length].focus();
+      }
     });
   });
 
   // Close when clicking outside
-  document.addEventListener("click", () => {
-    dropdown.classList.remove("is-open");
-    btn.setAttribute("aria-expanded", "false");
-  });
+  document.addEventListener("click", () => closeDropdown());
 })();

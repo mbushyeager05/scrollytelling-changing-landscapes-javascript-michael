@@ -10,7 +10,7 @@
 <body>
 
   <!-- Theme selector — fixed, always on top -->
-  <div class="theme-toggle-wrap">
+  <nav class="theme-toggle-wrap" aria-label="Theme selection">
     <button class="theme-select__btn" id="themeToggle" aria-haspopup="listbox" aria-expanded="false">
       <span class="theme-select__label" id="themeLabel">🌙 Dark</span>
       <span class="theme-select__caret">&#9662;</span>
@@ -20,7 +20,7 @@
       <li class="theme-select__option" data-value="light" role="option">☀️ Light</li>
       <li class="theme-select__option" data-value="os"    role="option">💻 OS Theme</li>
     </ul>
-  </div>
+  </nav>
 
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -82,7 +82,7 @@
       </div>
 
       <div class="layer__elements">
-        <svg class="city-traffic-light" width="1053" height="203" viewBox="0 0 1053 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="city-traffic-light" width="1053" height="203" viewBox="0 0 1053 203" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="City traffic lights">
           <g filter="url(#filter0_d_26_77)">
             <path d="M4 101.311C4 92.0385 11.5165 84.522 20.7886 84.522H1053V118.099H20.7885C11.5164 118.099 4 110.583 4 101.311Z" fill="#819595"/>
           </g>
@@ -239,7 +239,7 @@ brandColor = "#FF5733";
           <circle id="mountain-sun-circle" cx="200" cy="200" r="80" fill="#E8735A"/>
         </svg>
         <div class="birds-container">
-          <svg id="birds-svg" width="100%" height="100%" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+          <svg id="birds-svg" width="100%" height="100%" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Birds flying in formation over the coast">
             <g id="b1"><path d="M 100 200 Q 112 190, 120 200 Q 128 190, 140 200" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round"/></g>
             <g id="b2"><path d="M 150 185 Q 160 176, 167 185 Q 174 176, 184 185" stroke="#1a1a1a" stroke-width="1.8" fill="none" stroke-linecap="round"/></g>
             <g id="b3"><path d="M 185 195 Q 193 187, 199 195 Q 205 187, 213 195" stroke="#1a1a1a" stroke-width="1.6" fill="none" stroke-linecap="round"/></g>
@@ -418,7 +418,7 @@ window.addEventListener("scroll", fadeInSection);</code></pre>
       </div>
 
       <div class="layer__elements">
-        <svg id="compass-svg" viewBox="0 0 140 140" fill="none">
+        <svg id="compass-svg" viewBox="0 0 140 140" fill="none" role="img" aria-label="Spinning desert compass">
           <circle cx="70" cy="70" r="62" stroke="#8b7355" stroke-width="3" fill="#1e1a2e"/>
           <circle cx="70" cy="70" r="50" stroke="#6b5a3e" stroke-width="1" fill="none" opacity="0.5"/>
           <line x1="70" y1="12" x2="70" y2="22" stroke="#8b7355" stroke-width="2"/>
@@ -714,7 +714,7 @@ window.addEventListener("load", function() {
       <div class="layer__elements">
         <img src="assets/images/horizon-theme-2.0.png" alt="" class="horizon-cliff horizon-cliff--nightsky">
         <img src="assets/images/character-sitting.png" alt="" class="nightsky-character">
-        <svg class="aurora" viewBox="0 0 1440 600" data-speed="0.7" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <svg class="aurora" viewBox="0 0 1440 600" data-speed="0.7" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" role="img" aria-label="Aurora borealis" aria-hidden="true">
           <defs>
             <filter id="aurora-blur">
               <feGaussianBlur stdDeviation="22" />
