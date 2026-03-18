@@ -322,18 +322,6 @@ if (!prefersReducedMotion) {
     ease: "power1.in"
   });
 
-  // Step 5 — Forest character reacts — bobs up as Bigfoot disappears
-  forestPin.to(".forest-character", {
-    y: -20,
-    duration: 0.4,
-    ease: "power2.out"
-  }, "<0.5");
-
-  forestPin.to(".forest-character", {
-    y: 0,
-    duration: 0.6,
-    ease: "power2.inOut"
-  });
 
   // Mist fades in as forest transitions to mountains — after pin releases
   gsap.to(".theme_forest .layer__illustration", {
@@ -511,31 +499,18 @@ if (!prefersReducedMotion) {
     }
   });
 
-  // Sun rises from below the mountain peaks
-  gsap.to(".mountain-sun", {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    duration: 1.6,
-    ease: "power2.out",
+  // Sun rises then drifts — single scrubbed timeline eliminates y conflict
+  const mountainSunTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".theme_mountains",
-      start: "top 80%",
-      toggleActions: "play none none reverse"
-    }
-  });
-
-  // Sun drifts down slowly as you scroll — keeps it in view longer (same as horizon)
-  gsap.to(".mountain-sun", {
-    y: 1200,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".theme_mountains",
-      start: "10% top",
+      start: "top 90%",
       end: "bottom top",
       scrub: 2
     }
   });
+  mountainSunTl
+    .to(".mountain-sun", { opacity: 1, scale: 1, y: 0, ease: "power2.out", duration: 1.5 })
+    .to(".mountain-sun", { y: 1200, ease: "none", duration: 4 }, "<0.8");
 
   // Sun warms from orange to gold as it climbs
   gsap.to("#mountain-sun-circle", {
@@ -592,7 +567,7 @@ if (!prefersReducedMotion) {
   // Step 2 — Plane 1 flies across completely before next one appears
   coastPin.to(".coast-airplane--1", {
     x: 2800,
-    duration: 3,
+    duration: 5,
     ease: "none"
   });
 
@@ -600,7 +575,7 @@ if (!prefersReducedMotion) {
   coastPin.to({}, { duration: 0.8 });
   coastPin.to(".coast-airplane--2", {
     x: 2800,
-    duration: 3,
+    duration: 5,
     ease: "none"
   });
 
@@ -608,7 +583,7 @@ if (!prefersReducedMotion) {
   coastPin.to({}, { duration: 0.8 });
   coastPin.to(".coast-airplane--3", {
     x: 2800,
-    duration: 3,
+    duration: 5,
     ease: "none"
   });
 

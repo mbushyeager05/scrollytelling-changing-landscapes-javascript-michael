@@ -92,6 +92,15 @@ img {
   left: auto;
 }
 
+.theme_mountains .layer__illustration img {
+  width: 150%;
+  height: 100%;
+  bottom: 0;
+  top: auto;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
 .theme_forest .layer__illustration img {
   height: 337vh;
   width: 150%;
@@ -132,6 +141,7 @@ img {
   object-fit: cover;
   object-position: bottom center;
 }
+
 
 .theme_desert .layer__illustration img {
   height: 350vh;
@@ -370,14 +380,14 @@ section {
 .coast-airplane {
   position: absolute;
   left: 0;
-  width: 12%;
+  width: 16%;
   pointer-events: none;
   z-index: 2;
 }
 
 .coast-airplane--1 { top: 18vh; }
-.coast-airplane--2 { top: 30vh; width: 10%; }
-.coast-airplane--3 { top: 10vh; width: 8%; }
+.coast-airplane--2 { top: 30vh; width: 14%; }
+.coast-airplane--3 { top: 10vh; width: 12%; }
 
 .ocean-character {
   position: absolute;
